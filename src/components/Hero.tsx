@@ -25,9 +25,9 @@ const Hero = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-ultra-tight"
         >
-          Venda no Automático <br />
+          Automatize. Escale. <br />
           <span className="text-gradient">
-            Escale seu Lucro.
+            Venda Mais.
           </span>
         </motion.h1>
 
