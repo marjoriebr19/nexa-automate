@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, MessageCircle, Mail, Instagram, Link as LinkIcon } from 'lucide-react';
 
 const ContactCTA = () => {
   return (
@@ -25,35 +25,45 @@ const ContactCTA = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              <a href="https://wa.me/5511999999999" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <a href="https://wa.me/5585998687814" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                   <MessageCircle size={24} />
                 </div>
                 <div>
                   <p className="font-bold">WhatsApp</p>
-                  <p className="text-sm text-muted-foreground">(11) 99999-9999</p>
+                  <p className="text-sm text-muted-foreground">(85) 99868-7814</p>
                 </div>
               </a>
               
-              <a href="mailto:contato@nexautoma.com" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <a href="mailto:nexautoma.contato@gmail.com" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                   <Mail size={24} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-bold">E-mail</p>
-                  <p className="text-sm text-muted-foreground">contato@nexautoma.com</p>
+                  <p className="text-sm text-muted-foreground break-all">nexautoma.contato@gmail.com</p>
                 </div>
               </a>
-              
-              <div className="flex items-center gap-4 glass p-4 rounded-2xl">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                  <MapPin size={24} />
+
+              <a href="https://linktr.ee/nexautoma" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <LinkIcon size={24} />
                 </div>
                 <div>
-                  <p className="font-bold">Localização</p>
-                  <p className="text-sm text-muted-foreground">São Paulo, SP - Brasil</p>
+                  <p className="font-bold">Linktree</p>
+                  <p className="text-sm text-muted-foreground">linktr.ee/nexautoma</p>
                 </div>
-              </div>
+              </a>
+
+              <a href="https://instagram.com/nexautoma/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <Instagram size={24} />
+                </div>
+                <div>
+                  <p className="font-bold">Instagram</p>
+                  <p className="text-sm text-muted-foreground">@nexautoma</p>
+                </div>
+              </a>
             </div>
           </motion.div>
 
@@ -80,7 +90,7 @@ const ContactCTA = () => {
                 <label className="text-sm font-bold text-muted-foreground block mb-2">WhatsApp</label>
                 <input
                   type="tel"
-                  placeholder="(11) 99999-9999"
+                  placeholder="(85) 99868-7814"
                   className="w-full bg-secondary/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
               </div>

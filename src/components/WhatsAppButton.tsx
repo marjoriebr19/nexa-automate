@@ -23,7 +23,7 @@ const WhatsAppButton = () => {
   }, [showTooltip]);
 
   const handleClick = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Vim pelo site e gostaria de saber mais sobre os serviços.', '_blank');
+    window.open('https://wa.me/5585998687814?text=Olá! Vim pelo site da NEXAUTOMA e gostaria de saber mais sobre os serviços.', '_blank');
   };
 
   return (
