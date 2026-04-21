@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Send, MessageSquare, Mail, Phone, ArrowRight } from 'lucide-react';
+import { Send, MessageSquare, Mail, Instagram, Link as LinkIcon, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -32,27 +32,54 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               <a 
-                href="#" 
+                href="https://wa.me/5585998687814"
+                target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                   <MessageSquare size={20} className="text-primary" />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase text-muted-foreground">WhatsApp</p>
-                  <p className="font-bold">+55 (11) 99999-9999</p>
+                  <p className="font-bold">+55 (85) 99868-7814</p>
                 </div>
               </a>
               <a 
-                href="#" 
+                href="mailto:nexautoma.contato@gmail.com"
                 className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                   <Mail size={20} className="text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-bold uppercase text-muted-foreground">Email</p>
-                  <p className="font-bold">contato@nexaflow.com.br</p>
+                  <p className="font-bold break-all">nexautoma.contato@gmail.com</p>
+                </div>
+              </a>
+              <a 
+                href="https://linktr.ee/nexautoma"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+                  <LinkIcon size={20} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase text-muted-foreground">Linktree</p>
+                  <p className="font-bold">linktr.ee/nexautoma</p>
+                </div>
+              </a>
+              <a 
+                href="https://instagram.com/nexautoma/"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+                  <Instagram size={20} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase text-muted-foreground">Instagram</p>
+                  <p className="font-bold">@nexautoma</p>
                 </div>
               </a>
             </div>

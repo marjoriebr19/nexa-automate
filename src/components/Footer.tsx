@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Zap, Instagram, Mail, Phone, Link as LinkIcon } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,14 +36,20 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Contato</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone size={14} className="text-primary" /> (11) 99999-9999
+              <li>
+                <a href="https://wa.me/5585998687814" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Phone size={14} className="text-primary" /> (85) 99868-7814
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail size={14} className="text-primary" /> contato@nexautoma.com
+              <li>
+                <a href="mailto:nexautoma.contato@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors break-all">
+                  <Mail size={14} className="text-primary shrink-0" /> nexautoma.contato@gmail.com
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin size={14} className="text-primary" /> São Paulo, SP
+              <li>
+                <a href="https://linktr.ee/nexautoma" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <LinkIcon size={14} className="text-primary" /> linktr.ee/nexautoma
+                </a>
               </li>
             </ul>
           </div>
@@ -53,22 +59,28 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Siga-nos</h4>
             <div className="flex items-center gap-3">
               <a 
-                href="#" 
+                href="https://instagram.com/nexautoma/" 
+                target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
               >
                 <Instagram size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://linktr.ee/nexautoma" 
+                target="_blank" rel="noopener noreferrer"
+                aria-label="Linktree"
                 className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
               >
-                <Linkedin size={18} />
+                <LinkIcon size={18} />
               </a>
               <a 
-                href="#" 
+                href="https://wa.me/5585998687814" 
+                target="_blank" rel="noopener noreferrer"
+                aria-label="WhatsApp"
                 className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
               >
-                <Youtube size={18} />
+                <Phone size={18} />
               </a>
             </div>
           </div>

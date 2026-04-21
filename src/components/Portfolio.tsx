@@ -57,20 +57,31 @@ const Portfolio = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-ultra-tight mb-6">
             Projetos <span className="text-gradient">de Sucesso</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
             Conheça alguns dos negócios que transformamos com automação.
           </p>
+          <a
+            href="https://linktr.ee/nexautoma"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl font-bold text-sm transition-all btn-glow"
+          >
+            Ver portfólio completo no Linktree <ExternalLink size={16} />
+          </a>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.title}
+              href="https://linktr.ee/nexautoma"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass rounded-3xl overflow-hidden card-hover group"
+              className="glass rounded-3xl overflow-hidden card-hover group block"
             >
               {/* Image Placeholder */}
               <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
@@ -95,7 +106,7 @@ const Portfolio = () => {
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-sm text-muted-foreground">{project.desc}</p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
