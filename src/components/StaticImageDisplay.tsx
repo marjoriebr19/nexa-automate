@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageSquare } from 'lucide-react';
+
 
 const StaticImageDisplay = () => {
   const images = [
@@ -29,19 +29,6 @@ const StaticImageDisplay = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute bottom-6 left-6 right-6 p-4 glass rounded-2xl">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                      <MessageSquare size={16} className="text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-xs">Feedback</p>
-                    </div>
-                  </div>
-                  <p className="text-xs italic text-muted-foreground">
-                    Exibição estática de alta performance para o projeto NEXAUTOMA.
-                  </p>
-                </div>
               </div>
             </motion.div>
           ))}
