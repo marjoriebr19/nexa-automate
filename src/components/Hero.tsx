@@ -21,7 +21,7 @@ const Hero = () => {
           <CountdownTimer />
           
           <div className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-5 py-2 rounded-full text-primary text-[10px] md:text-xs font-black uppercase tracking-ultra-wide shadow-[0_0_20px_hsl(var(--blue-500)/0.1)]">
-            <Zap size={14} className="fill-primary" /> Domínio Digital & Vendas Automáticas
+            <img src={logoAsset.url} alt="Logo" className="w-4 h-4 object-contain" /> Domínio Digital & Vendas Automáticas
           </div>
         </motion.div>
         
