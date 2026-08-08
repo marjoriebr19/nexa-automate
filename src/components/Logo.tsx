@@ -16,7 +16,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", size = "md", pulse = false 
   };
 
   return (
-    <div className={`rounded-xl overflow-hidden flex items-center justify-center shrink-0 ${sizeClasses[size]} ${className}`}>
+    <div className={`rounded-xl overflow-hidden flex items-center justify-center shrink-0 ${sizeClasses[size]} ${pulse ? 'animate-pulse-opacity' : ''} ${className}`}>
       <img 
         src={logoAsset.url} 
         alt="NEXAUTOMA" 
