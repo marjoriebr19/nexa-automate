@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import { TrendingUp, AlertCircle, DollarSign, Users, Percent } from 'lucide-react';
+import { useROI } from '@/hooks/useROI';
 
 const ROICalculator = () => {
-  const [leads, setLeads] = useState(100);
-  const [ticket, setTicket] = useState(500);
-  const [loss, setLoss] = useState(40);
-
-  const lostMonthly = leads * (loss / 100) * ticket;
-  const lostYearly = lostMonthly * 12;
+  const { 
+    leads, setLeads, 
+    ticket, setTicket, 
+    loss, setLoss, 
+    lostYearly 
+  } = useROI();
 
   return (
     <section id="roi" className="section-padding relative overflow-hidden">
-      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <div className="bg-glow w-[800px] h-[800px] opacity-20" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left: Calculator */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -31,7 +30,6 @@ const ROICalculator = () => {
             </h3>
             
             <div className="space-y-6 mb-10">
-              {/* Leads Slider */}
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <label className="text-muted-foreground text-sm font-bold uppercase flex items-center gap-2">
@@ -50,7 +48,6 @@ const ROICalculator = () => {
                 />
               </div>
 
-              {/* Ticket Slider */}
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <label className="text-muted-foreground text-sm font-bold uppercase flex items-center gap-2">
@@ -70,7 +67,6 @@ const ROICalculator = () => {
                 />
               </div>
 
-              {/* Loss Slider */}
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <label className="text-destructive text-sm font-bold uppercase flex items-center gap-2">
@@ -90,7 +86,6 @@ const ROICalculator = () => {
               </div>
             </div>
 
-            {/* Result */}
             <div className="bg-destructive/10 border border-destructive/20 p-6 sm:p-8 rounded-3xl">
               <p className="text-muted-foreground text-xs font-black uppercase tracking-ultra-wide mb-2">
                 Desperdício Estimado/Ano
@@ -104,7 +99,6 @@ const ROICalculator = () => {
             </div>
           </motion.div>
 
-          {/* Right: CTA */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
