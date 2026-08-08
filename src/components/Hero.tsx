@@ -15,10 +15,18 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-5 py-2 rounded-full text-primary text-[10px] md:text-xs font-black mb-8 uppercase tracking-ultra-wide shadow-[0_0_20px_hsl(var(--blue-500)/0.1)]"
+          className="flex flex-col items-center gap-6 mb-12"
         >
-          <Zap size={14} className="fill-primary" /> Domínio Digital & Vendas Automáticas
+          <CountdownTimer />
+          
+          <div className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-5 py-2 rounded-full text-primary text-[10px] md:text-xs font-black uppercase tracking-ultra-wide shadow-[0_0_20px_hsl(var(--blue-500)/0.1)]">
+            <Zap size={14} className="fill-primary" /> Domínio Digital & Vendas Automáticas
+          </div>
         </motion.div>
+        
+        <div className="mb-4 text-primary text-xs font-black uppercase tracking-widest">
+          • Orçamento Grátis
+        </div>
         
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -26,9 +34,9 @@ const Hero = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-ultra-tight"
         >
-          Automatize. Escale. <br />
+          Crie seu site ideal e veja <br />
           <span className="text-gradient">
-            Venda Mais.
+            seu negócio crescer.
           </span>
         </motion.h1>
 
