@@ -20,7 +20,7 @@ import InteractiveQuiz from '@/components/InteractiveQuiz';
 import ActivityFeed from '@/components/ActivityFeed';
 import ClientLogos from '@/components/ClientLogos';
 import Portfolio from '@/components/Portfolio';
-import ImageCarousel from '@/components/ImageCarousel';
+import StaticImageDisplay from '@/components/StaticImageDisplay';
 
 const Index = () => {
   return (
@@ -40,7 +40,7 @@ const Index = () => {
         <SocialProof />
         <CaseStudy />
         <Portfolio />
-        <ImageCarousel />
+        <StaticImageDisplay />
         <TrustBadges />
         <FAQ />
         <ContactCTA />
