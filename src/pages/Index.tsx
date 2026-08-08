@@ -28,7 +28,7 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <ClientLogos />
+        
         <PainPoints />
         <Benefits />
         <Services />
