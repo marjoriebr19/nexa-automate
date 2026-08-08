@@ -4,28 +4,52 @@ import { MessageSquare, Layout, MapPin, Zap, ArrowUpRight, CheckCircle2 } from '
 
 const services = [
   { 
-    title: "WhatsApp AI Elite", 
-    desc: "Agentes de vendas inteligentes que qualificam leads, quebram objeções e fecham vendas 24h por dia diretamente no seu WhatsApp.", 
-    icon: <MessageSquare size={28} className="text-primary" />,
-    features: ["Atendimento Humanoide", "Agendamento Automático", "Integração CRM"]
-  },
-  { 
-    title: "LPs de Conversão", 
-    desc: "Landing Pages de carregamento instantâneo projetadas com gatilhos mentais para converter visitantes em clientes em segundos.", 
+    title: "Sites Institucionais", 
+    desc: "Sites profissionais e personalizados para empresas que desejam ter uma presença online sólida e confiável.", 
     icon: <Layout size={28} className="text-primary" />,
-    features: ["Copy Persuasivo", "Otimização Mobile", "SEO para Escala"]
+    features: ["Profissional", "Personalizado", "Confiável"]
   },
   { 
-    title: "Mastery Google GMN", 
-    desc: "Domine as buscas locais. Colocamos sua empresa nas primeiras posições do Google Meu Negócio para atrair clientes prontos para comprar.", 
-    icon: <MapPin size={28} className="text-primary" />,
-    features: ["Gestão de Avaliações", "Otimização de SEO Local", "Relatórios de ROI"]
-  },
-  { 
-    title: "Ecossistema Nexa", 
-    desc: "Conectamos todas as frentes em um fluxo único onde o cliente entra pela LP, é atendido pela IA e finalizado no seu caixa.", 
+    title: "Landing Pages Otimizadas", 
+    desc: "Páginas de alta conversão para campanhas e capturas de leads, projetadas para impulsionar resultados.", 
     icon: <Zap size={28} className="text-primary" />,
-    features: ["Automação Ponta a Ponta", "Dashboard Unificado", "Vendas em Escala"]
+    features: ["Alta Conversão", "Campanhas", "Leads"]
+  },
+  { 
+    title: "Lojas Virtuais (E-commerce)", 
+    desc: "Plataformas completas para venda online, com funcionalidades modernas e uma experiência de compra incrível.", 
+    icon: <MessageSquare size={28} className="text-primary" />,
+    features: ["Venda Online", "Funcionalidades Modernas", "Experiência"]
+  },
+  { 
+    title: "SISTEMAS PERSONALIZADOS", 
+    desc: "Soluções sob medida para atender às necessidades específicas do seu negócio, com eficiência e inovação.", 
+    icon: <Zap size={28} className="text-primary" />,
+    features: ["Sob Medida", "Eficiência", "Inovação"]
+  },
+  { 
+    title: "APLICATIVOS", 
+    desc: "Desenvolvimento de aplicativos modernos e funcionais para Android e iOS, projetados para engajar seus usuários.", 
+    icon: <Layout size={28} className="text-primary" />,
+    features: ["Android/iOS", "Modernos", "Funcionais"]
+  },
+  { 
+    title: "TRÁFEGO PAGO", 
+    desc: "Estratégias de anúncios online para atrair clientes e aumentar a visibilidade da sua marca rapidamente.", 
+    icon: <Zap size={28} className="text-primary" />,
+    features: ["Anúncios", "Visibilidade", "Rápido"]
+  },
+  { 
+    title: "Blog Corporativo", 
+    desc: "Criação de blogs profissionais para compartilhar conteúdo relevante e engajar sua audiência.", 
+    icon: <Layout size={28} className="text-primary" />,
+    features: ["Conteúdo", "Engajamento", "Profissional"]
+  },
+  { 
+    title: "SEO e CRO", 
+    desc: "Otimização para mecanismos de busca e conversão para levar seu site ao topo e maximizar resultados.", 
+    icon: <Zap size={28} className="text-primary" />,
+    features: ["Busca", "Conversão", "Maximizar"]
   }
 ];
 
@@ -40,10 +64,10 @@ const Services = () => {
           className="text-center mb-16"
         >
           <span className="inline-block text-primary text-xs font-black uppercase tracking-ultra-wide mb-4">
-            Nossos Serviços
+            Orçamento Grátis
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-ultra-tight mb-6">
-            Soluções que <span className="text-gradient">Transformam</span>
+            Vamos Construir o Seu <span className="text-gradient">Sucesso Digital</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Ferramentas poderosas para automatizar suas vendas e escalar seu negócio.
