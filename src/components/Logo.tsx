@@ -4,9 +4,10 @@ import logoAsset from '@/assets/logo-nexautoma.png.asset.json';
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  pulse?: boolean;
 }
 
-const Logo: React.FC<LogoProps> = ({ className = "", size = "md" }) => {
+const Logo: React.FC<LogoProps> = ({ className = "", size = "md", pulse = false }) => {
   const sizeClasses = {
     sm: "w-4 h-4",
     md: "w-[50px] h-[50px]",
