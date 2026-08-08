@@ -14,7 +14,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Zap size={20} className="fill-primary-foreground text-primary-foreground" />
               </div>
-              <span>O REI DOS <span className="text-primary">SITES</span></span>
+              <span>NEX<span className="text-primary">AUTOMA</span></span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Transformando negócios com automação inteligente e vendas escaláveis.
@@ -89,7 +89,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} O Rei dos Sites. Todos os direitos reservados.
+            © {currentYear} NEXAUTOMA. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Política de Privacidade</a>
