@@ -6,22 +6,22 @@
 
 @layer base {
   :root {
-    --background: 222 47% 4%;
+    --background: 222 47% 2%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 6%;
+    --card: 222 47% 4%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 6%;
+    --popover: 222 47% 4%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 215 28% 17%;
+    --secondary: 215 28% 12%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 215 28% 17%;
+    --muted: 215 28% 12%;
     --muted-foreground: 215 20% 55%;
 
     --accent: 226 70% 55%;
@@ -30,11 +30,11 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 217 33% 12%;
+    --input: 217 33% 12%;
     --ring: 217 91% 60%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     /* Custom colors */
     --blue-400: 213 94% 68%;
@@ -43,11 +43,11 @@
     --indigo-500: 239 84% 67%;
     --slate-400: 215 20% 65%;
     --slate-500: 215 16% 47%;
-    --slate-950: 222 47% 4%;
+    --slate-950: 222 47% 2%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(to right, hsl(213 94% 68%), hsl(221 83% 53%), hsl(239 84% 67%));
-    --gradient-glow: linear-gradient(to right, hsl(217 91% 60% / 0.3), hsl(239 84% 67% / 0.3));
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(221 83% 53%), hsl(239 84% 67%));
+    --gradient-glow: radial-gradient(circle at center, hsl(217 91% 60% / 0.15), transparent 70%);
   }
 }
 
@@ -61,52 +61,70 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-rendering: optimizeLegibility;
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
   }
 
   .glass-strong {
-    @apply bg-white/10 backdrop-blur-2xl border border-white/20;
+    @apply bg-white/[0.08] backdrop-blur-2xl border border-white/[0.15] shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
   }
 
   .btn-glow {
-    box-shadow: 0 0 40px hsl(var(--blue-600) / 0.4), 0 0 80px hsl(var(--blue-600) / 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  .btn-glow:hover::after {
+    transform: translateX(100%);
   }
 
   .btn-glow:hover {
-    box-shadow: 0 0 60px hsl(var(--blue-600) / 0.5), 0 0 100px hsl(var(--blue-600) / 0.3);
+    box-shadow: 0 0 30px hsl(var(--blue-600) / 0.4);
+    transform: translateY(-2px);
   }
 
   .text-gradient {
-    @apply text-transparent bg-clip-text;
+    @apply text-transparent bg-clip-text font-extrabold;
     background-image: var(--gradient-primary);
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.2));
   }
 
   .bg-glow {
-    @apply absolute rounded-full blur-[160px] opacity-40 pointer-events-none;
-    background: hsl(var(--blue-600) / 0.2);
+    @apply absolute rounded-full blur-[120px] opacity-20 pointer-events-none;
+    background: radial-gradient(circle, hsl(var(--blue-600)), transparent);
   }
 
   .section-padding {
-    @apply py-20 md:py-32 px-6;
+    @apply py-24 md:py-40 px-6 max-w-7xl mx-auto;
   }
 
   .card-hover {
-    @apply transition-all duration-500 hover:border-white/20 hover:bg-white/[0.08];
+    @apply transition-all duration-500 hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-2;
   }
 
   .link-glow {
-    @apply transition-all duration-300;
+    @apply transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
   }
 
   .link-glow:hover {
-    text-shadow: 0 0 20px hsl(var(--blue-500) / 0.5);
+    text-shadow: 0 0 15px hsl(var(--blue-500) / 0.4);
   }
 }
 

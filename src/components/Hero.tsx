@@ -33,7 +33,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-ultra-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 tracking-tighter"
         >
           Crie seu site ideal e veja <br />
           <span className="text-gradient">
@@ -56,11 +56,11 @@ const Hero = () => {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-20"
         >
-          <button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg flex items-center justify-center gap-3 transition-all btn-glow active:scale-[0.98]">
-            FAZER ORÇAMENTO GRATUITO <ArrowRight size={22} />
+          <button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 transition-all btn-glow active:scale-[0.98]">
+            FAZER ORÇAMENTO GRATUITO <ArrowRight size={24} />
           </button>
-          <button className="w-full sm:w-auto glass text-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg flex items-center justify-center gap-3 hover:bg-white/5 transition-all active:scale-[0.98]">
-            <Play size={18} className="fill-foreground" /> Ver Demonstração
+          <button className="w-full sm:w-auto glass text-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 hover:bg-white/5 transition-all active:scale-[0.98]">
+            <Play size={20} className="fill-foreground" /> Ver Demonstração
           </button>
         </motion.div>
 

@@ -53,7 +53,7 @@ const Benefits = () => {
           <span className="inline-block text-primary text-xs font-black uppercase tracking-ultra-wide mb-4">
             Oferta especial
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-ultra-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter mb-6">
             Por que ter um <span className="text-gradient">SITE?</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -69,7 +69,7 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass p-8 rounded-3xl card-hover group"
+              className="glass p-8 rounded-[2rem] card-hover group"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
