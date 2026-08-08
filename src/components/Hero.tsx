@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Play, CheckCircle2, Clock } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2 } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
+import logoAsset from '@/assets/logo-nexautoma.png.asset.json';
 
 const Hero = () => {
   return (
@@ -20,7 +21,7 @@ const Hero = () => {
           <CountdownTimer />
           
           <div className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-5 py-2 rounded-full text-primary text-[10px] md:text-xs font-black uppercase tracking-ultra-wide shadow-[0_0_20px_hsl(var(--blue-500)/0.1)]">
-            <Zap size={14} className="fill-primary" /> Domínio Digital & Vendas Automáticas
+            <img src={logoAsset.url} alt="Logo" className="w-4 h-4 object-contain" /> Domínio Digital & Vendas Automáticas
           </div>
         </motion.div>
         
