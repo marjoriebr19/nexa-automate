@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Play, CheckCircle2, Clock } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2 } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
+import logoAsset from '@/assets/logo-nexautoma.png.asset.json';
 
 const Hero = () => {
   return (
