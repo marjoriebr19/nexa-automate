@@ -66,7 +66,7 @@ const Services = () => {
           <span className="inline-block text-primary text-xs font-black uppercase tracking-ultra-wide mb-4">
             Orçamento Grátis
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-ultra-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-black tracking-tighter mb-6 leading-[0.95]">
             Vamos Construir o Seu <span className="text-gradient">Sucesso Digital</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -82,7 +82,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass p-8 rounded-3xl card-hover group"
+              className="glass p-10 rounded-[2.5rem] card-hover group"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
