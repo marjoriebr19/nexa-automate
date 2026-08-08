@@ -32,7 +32,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               <a 
-                href="https://wa.me/5585998687814"
+                href="https://wa.me/5585998687814?text=Olá! Tudo bem? Gostaria de saber mais sobre os serviços. Comece agora https://linkparacomecar.com ou faça um orçamento gratuito em https://linkparaorcamento.com e veja nossa demonstração em https://linkparademonstracao.com. ¿Precisa de mais ajuda? 😊"
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
               >
