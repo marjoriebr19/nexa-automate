@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap } from 'lucide-react';
+import logoAsset from '@/assets/logo-nexautoma.png.asset.json';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
