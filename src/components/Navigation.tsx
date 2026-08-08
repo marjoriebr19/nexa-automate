@@ -34,7 +34,7 @@ const Navigation = () => {
             <Zap size={20} className="text-primary fill-primary" />
           </div>
           <span className="text-xl font-black tracking-tight">
-            O REI DOS <span className="text-primary">SITES</span>
+            NEX<span className="text-primary">AUTOMA</span>
           </span>
         </a>
 

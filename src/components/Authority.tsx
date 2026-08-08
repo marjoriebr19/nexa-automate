@@ -24,17 +24,17 @@ const Authority = () => {
               sobre
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-ultra-tight mb-6">
-              quem é <span className="text-gradient">Herbert Carnaúba?</span>
+              quem é a <span className="text-gradient">NEXAUTOMA?</span>
             </h2>
             <div className="text-muted-foreground text-base mb-8 space-y-4 leading-relaxed">
               <p>
-                Herbert Carnaúba é um jovem empreendedor que ficou conhecido como o “rei dos sites”. Com apenas 22 anos, ele saiu de São Paulo e foi para Curitiba em busca de oportunidades para construir sua carreira.
+                A NEXAUTOMA é uma agência especializada em transformar a presença digital de negócios locais e empresas em crescimento através de tecnologia de ponta e estratégias de conversão.
               </p>
               <p>
-                Foi lá que ele descobriu sua paixão pela criação de sites e decidiu investir nesse ramo. Com muita dedicação e esforço, Herbert construiu um império de criação de sites que o tornou referência no mercado.
+                Nascemos da necessidade de oferecer soluções que não apenas parecem bonitas, mas que funcionam como verdadeiras máquinas de vendas, integrando Landing Pages de alta performance com automações inteligentes de WhatsApp e IA.
               </p>
               <p>
-                Com seu exemplo inspirador, Herbert Carnaúba mostra que é possível conquistar seus sonhos e alcançar o sucesso com trabalho duro e perseverança.
+                Nossa missão é colocar sua empresa no topo do Google e garantir que cada visitante tenha o caminho mais curto até se tornar um cliente fiel.
               </p>
             </div>
             
