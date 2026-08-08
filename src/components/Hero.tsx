@@ -56,12 +56,22 @@ const Hero = () => {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-20"
         >
-          <button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 transition-all btn-glow active:scale-[0.98]">
+          <a 
+            href="https://wa.me/5585998687814?text=Olá! Tudo bem? Gostaria de saber mais sobre os serviços. Comece agora https://linkparacomecar.com ou faça um orçamento gratuito em https://linkparaorcamento.com e veja nossa demonstração em https://linkparademonstracao.com. ¿Precisa de mais ajuda? 😊"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 transition-all btn-glow active:scale-[0.98]"
+          >
             FAZER ORÇAMENTO GRATUITO <ArrowRight size={24} />
-          </button>
-          <button className="w-full sm:w-auto glass text-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 hover:bg-white/5 transition-all active:scale-[0.98]">
+          </a>
+          <a 
+            href="https://wa.me/5585998687814?text=Olá! Tudo bem? Gostaria de saber mais sobre os serviços. Comece agora https://linkparacomecar.com ou faça um orçamento gratuito em https://linkparaorcamento.com e veja nossa demonstração em https://linkparademonstracao.com. ¿Precisa de mais ajuda? 😊"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto glass text-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-2xl font-black text-lg sm:text-xl flex items-center justify-center gap-3 hover:bg-white/5 transition-all active:scale-[0.98]"
+          >
             <Play size={20} className="fill-foreground" /> Ver Demonstração
-          </button>
+          </a>
         </motion.div>
 
         <motion.div 
