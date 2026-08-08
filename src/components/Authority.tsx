@@ -21,16 +21,26 @@ const Authority = () => {
             viewport={{ once: true }}
           >
             <span className="inline-block text-primary text-xs font-black uppercase tracking-ultra-wide mb-4">
-              Por que a NEXAUTOMA?
+              sobre
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-ultra-tight mb-6">
-              Especialistas em <span className="text-gradient">Automação de Vendas</span>
+              quem é <span className="text-gradient">Herbert Carnaúba?</span>
             </h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Há mais de 5 anos transformando negócios com tecnologia de ponta. 
-              Nossa metodologia exclusiva combina IA avançada, copywriting persuasivo 
-              e estratégias comprovadas de conversão.
-            </p>
+            <div className="text-muted-foreground text-base mb-8 space-y-4 leading-relaxed">
+              <p>
+                Herbert Carnaúba é um jovem empreendedor que ficou conhecido como o “rei dos sites”. Com apenas 22 anos, ele saiu de São Paulo e foi para Curitiba em busca de oportunidades para construir sua carreira.
+              </p>
+              <p>
+                Foi lá que ele descobriu sua paixão pela criação de sites e decidiu investir nesse ramo. Com muita dedicação e esforço, Herbert construiu um império de criação de sites que o tornou referência no mercado.
+              </p>
+              <p>
+                Com seu exemplo inspirador, Herbert Carnaúba mostra que é possível conquistar seus sonhos e alcançar o sucesso com trabalho duro e perseverança.
+              </p>
+            </div>
+            
+            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-bold text-sm transition-all btn-glow mb-8">
+              fazer orçamento
+            </button>
             
             <div className="space-y-4 mb-8">
               {[
