@@ -36,7 +36,7 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Contato</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://wa.me/5585998687814" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://wa.me/5585998687814?text=Olá! Tudo bem? Gostaria de saber mais sobre os serviços. Comece agora https://linkparacomecar.com ou faça um orçamento gratuito em https://linkparaorcamento.com e veja nossa demonstração em https://linkparademonstracao.com. ¿Precisa de mais ajuda? 😊" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <Phone size={14} className="text-primary" /> (85) 99868-7814
                 </a>
               </li>

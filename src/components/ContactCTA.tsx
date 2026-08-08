@@ -25,7 +25,7 @@ const ContactCTA = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              <a href="https://wa.me/5585998687814" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
+              <a href="https://wa.me/5585998687814?text=Olá! Tudo bem? Gostaria de saber mais sobre os serviços. Comece agora https://linkparacomecar.com ou faça um orçamento gratuito em https://linkparaorcamento.com e veja nossa demonstração em https://linkparademonstracao.com. ¿Precisa de mais ajuda? 😊" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 glass p-4 rounded-2xl hover:bg-white/5 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                   <MessageCircle size={24} />
                 </div>
