@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap } from 'lucide-react';
+import logoAsset from '@/assets/logo-nexautoma.png.asset.json';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,8 +31,8 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-            <Zap size={20} className="text-primary fill-primary" />
+          <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform">
+            <img src={logoAsset.url} alt="NEXAUTOMA Logo" className="w-full h-full object-cover" />
           </div>
           <span className="text-xl font-black tracking-tight">
             NEX<span className="text-primary">AUTOMA</span>
