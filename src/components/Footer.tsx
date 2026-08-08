@@ -1,6 +1,6 @@
 import React from 'react';
-import { Zap, Instagram, Mail, Phone, Link as LinkIcon } from 'lucide-react';
-import logoAsset from '@/assets/logo-nexautoma.png.asset.json';
+import { Instagram, Mail, Phone, Link as LinkIcon } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,9 +12,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="#" className="flex items-center gap-2 text-xl font-black tracking-tight mb-4">
-              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-                <img src={logoAsset.url} alt="NEXAUTOMA Logo" className="w-full h-full object-cover" />
-              </div>
+              <Logo size="md" />
               <span>NEX<span className="text-primary">AUTOMA</span></span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
