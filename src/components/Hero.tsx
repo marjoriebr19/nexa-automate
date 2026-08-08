@@ -33,7 +33,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-ultra-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 tracking-tighter"
         >
           Crie seu site ideal e veja <br />
           <span className="text-gradient">
