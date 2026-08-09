@@ -63,10 +63,20 @@ const Results = () => {
               </p>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-primary font-bold text-sm">
-                    {testimonial.name.charAt(0)}
-                  </span>
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-primary/20 bg-primary/20">
+                  {testimonial.image ? (
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-primary font-bold text-sm">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div>
                   <p className="font-bold text-sm">{testimonial.name}</p>
