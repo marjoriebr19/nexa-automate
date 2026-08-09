@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Upload, X, Maximize2, Send } from 'lucide-react';
-import SectionHeader from './ui/SectionHeader';
 import { toast } from 'sonner';
 
 import chatRafael from '@/assets/chat-rafael.png.asset.json';
@@ -10,15 +9,37 @@ import chatDomusPet from '@/assets/chat-domuspet.png.asset.json';
 
 interface GalleryImage {
   url: string;
+  name: string;
+  testimonial: string;
   uploadDate: string;
 }
 
 const Gallery = () => {
   const [images, setImages] = useState<GalleryImage[]>([
-    { url: chatRafael.url, uploadDate: new Date().toISOString() },
-    { url: chatLucas.url, uploadDate: new Date().toISOString() },
-    { url: chatIronFit.url, uploadDate: new Date().toISOString() },
-    { url: chatDomusPet.url, uploadDate: new Date().toISOString() },
+    { 
+      url: chatRafael.url, 
+      name: "Rafael - Império Climatização",
+      testimonial: "Aparecemos no Google e isso fez toda a diferença!",
+      uploadDate: new Date().toISOString() 
+    },
+    { 
+      url: chatLucas.url, 
+      name: "Lucas (Cliente)",
+      testimonial: "Mais credibilidade, mais contatos e mais clientes!",
+      uploadDate: new Date().toISOString() 
+    },
+    { 
+      url: chatIronFit.url, 
+      name: "Iron Fit Academia",
+      testimonial: "As matrículas pelo site aumentaram muito!",
+      uploadDate: new Date().toISOString() 
+    },
+    { 
+      url: chatDomusPet.url, 
+      name: "Domus Pet",
+      testimonial: "Vendas aumentaram bastante desde que o site entrou no ar!",
+      uploadDate: new Date().toISOString() 
+    },
   ]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
@@ -27,19 +48,18 @@ const Gallery = () => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    // Em um cenário real, faríamos upload para um storage (ex: Supabase Storage)
-    // Para este componente, usaremos uma URL temporária para demonstração
     const reader = new FileReader();
     reader.onload = (e) => {
       const newImageUrl = e.target?.result as string;
       const newImage: GalleryImage = {
         url: newImageUrl,
+        name: "Novo Cliente",
+        testimonial: "Excelente trabalho da Nex Automa!",
         uploadDate: new Date().toISOString(),
       };
       
-      // Substituir a primeira imagem (ou a lógica desejada de substituição)
-      setImages(prev => [newImage, ...prev.slice(1)]);
-      toast.success("Imagem substituída com sucesso!");
+      setImages(prev => [...prev, newImage]);
+      toast.success("Imagem adicionada com sucesso!");
     };
     reader.readAsDataURL(file);
   };
@@ -47,61 +67,67 @@ const Gallery = () => {
   const handleSendToServer = async () => {
     setIsUploading(true);
     try {
-      // Simulação de requisição POST JSON para o servidor
       console.log("Enviando fotos para o servidor:", JSON.stringify(images));
-      
-      // Simula delay de rede
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast.success("Galeria sincronizada com o servidor!");
+      toast.success("Galeria sincronizada!");
     } catch (error) {
-      toast.error("Erro ao enviar para o servidor.");
+      toast.error("Erro ao enviar.");
     } finally {
       setIsUploading(false);
     }
   };
 
   return (
-    <section id="galeria-projetos" className="section-padding bg-black/40 relative">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+    <section id="galeria-resultados" className="section-padding bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+        {/* Lista Vertical de Resultados */}
+        <div className="flex flex-col gap-[10px] items-center">
           {images.map((image, index) => (
-            <div key={index} className="group relative glass rounded-2xl overflow-hidden border border-white/10 aspect-video">
-              <img 
-                src={image.url} 
-                alt={`Projeto ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                <button 
-                  onClick={() => setSelectedImage(image.url)}
-                  className="p-3 bg-primary/20 hover:bg-primary/40 rounded-full border border-primary/30 text-white transition-colors"
-                  title="Visualizar em tamanho maior"
-                >
-                  <Maximize2 size={20} />
-                </button>
-                <label className="p-3 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 text-white cursor-pointer transition-colors" title="Substituir imagem">
-                  <Upload size={20} />
-                  <input type="file" className="hidden" onChange={handleFileUpload} accept="image/*" />
-                </label>
+            <div 
+              key={index} 
+              className="w-[300px] flex flex-col bg-white rounded-[5px] shadow-sm border border-gray-100 overflow-hidden"
+              style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}
+            >
+              {/* Imagem com Altura Automática */}
+              <div className="relative group w-full cursor-pointer" onClick={() => setSelectedImage(image.url)}>
+                <img 
+                  src={image.url} 
+                  alt={image.name}
+                  className="w-full h-auto block"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <Maximize2 size={24} className="text-white" />
+                </div>
               </div>
-              <div className="absolute bottom-3 left-3 px-2 py-1 glass text-[10px] text-white/60 rounded">
-                Upload: {new Date(image.uploadDate).toLocaleDateString()}
+              
+              {/* Informações do Cliente abaixo da imagem */}
+              <div className="p-4 bg-white text-left">
+                <h4 className="font-['Open_Sans'] text-[14px] font-bold text-[#333333] mb-1">
+                  {image.name}
+                </h4>
+                <p className="font-['Open_Sans'] text-[14px] text-[#333333] leading-relaxed">
+                  "{image.testimonial}"
+                </p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-12 flex gap-4">
+          <label className="flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-bold hover:bg-gray-200 transition-all cursor-pointer">
+            <Upload size={20} />
+            Adicionar Foto
+            <input type="file" className="hidden" onChange={handleFileUpload} accept="image/*" />
+          </label>
           <button 
             onClick={handleSendToServer}
             disabled={isUploading}
-            className="flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
+            className="flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
           >
-            {isUploading ? "Enviando..." : (
+            {isUploading ? "Sincronizando..." : (
               <>
                 <Send size={20} />
-                Sincronizar com Servidor (POST JSON)
+                Sincronizar
               </>
             )}
           </button>

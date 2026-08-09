@@ -12,7 +12,7 @@ const ROICalculator = lazy(() => import('@/components/ROICalculator'));
 const Authority = lazy(() => import('@/components/Authority'));
 const HowItWorks = lazy(() => import('@/components/HowItWorks'));
 const InteractiveQuiz = lazy(() => import('@/components/InteractiveQuiz'));
-const ResultsCarousel = lazy(() => import('@/components/ResultsCarousel'));
+
 const CaseStudy = lazy(() => import('@/components/CaseStudy'));
 const Gallery = lazy(() => import('@/components/Gallery'));
 const TrustBadges = lazy(() => import('@/components/TrustBadges'));
@@ -51,7 +51,6 @@ const Index = () => {
           <Authority />
           <HowItWorks />
           <InteractiveQuiz />
-          <ResultsCarousel />
           <Gallery />
           <CaseStudy />
           <TrustBadges />
