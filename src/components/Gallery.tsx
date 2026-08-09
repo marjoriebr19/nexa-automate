@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { X, Maximize2, Star, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import chatRafael from '@/assets/chat-rafael.png.asset.json';
 import chatLucas from '@/assets/chat-lucas.png.asset.json';
@@ -50,6 +53,39 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 5000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <section id="galeria-resultados" className="relative py-24 md:py-40 px-6 overflow-hidden">
       {/* Background Decorativo */}
@@ -90,63 +126,62 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Grid de Depoimentos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((item, index) => (
-            <motion.div 
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              onClick={() => setSelectedId(item.id)}
-              className={`
-                group cursor-pointer glass p-6 rounded-[2rem] transition-all duration-500 hover:-translate-y-2
-                ${selectedId === item.id ? 'border-primary shadow-[0_0_30px_rgba(59,130,246,0.2)]' : 'hover:border-white/20'}
-              `}
-            >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 bg-slate-900/50 border border-white/5">
-                <img 
-                  src={item.url} 
-                  alt={item.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedImage(item.url);
-                  }}
-                  className="absolute top-4 right-4 p-3 glass-strong rounded-full text-white/70 hover:text-white transition-colors z-10 opacity-0 group-hover:opacity-100"
+        {/* Carrossel de Depoimentos */}
+        <div className="gallery-carousel-wrapper">
+          <Slider {...sliderSettings}>
+            {testimonials.map((item) => (
+              <div key={item.id} className="px-3">
+                <motion.div 
+                  onClick={() => setSelectedId(item.id)}
+                  className={`
+                    group cursor-pointer glass p-6 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 h-full
+                    ${selectedId === item.id ? 'border-primary shadow-[0_0_30px_rgba(59,130,246,0.2)]' : 'hover:border-white/20'}
+                  `}
                 >
-                  <Maximize2 size={18} />
-                </button>
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 bg-slate-900/50 border border-white/5">
+                    <img 
+                      src={item.url} 
+                      alt={item.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedImage(item.url);
+                      }}
+                      className="absolute top-4 right-4 p-3 glass-strong rounded-full text-white/70 hover:text-white transition-colors z-10 opacity-0 group-hover:opacity-100"
+                    >
+                      <Maximize2 size={18} />
+                    </button>
+                  </div>
+                  
+                  <div className="flex flex-col gap-4">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={14} className="fill-primary text-primary" />
+                      ))}
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-black text-foreground mb-1">
+                        {item.name}
+                      </h4>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-primary">
+                        {item.role}
+                      </p>
+                    </div>
+    
+                    <div className="relative">
+                      <Quote size={20} className="text-primary/20 absolute -top-2 -left-2" />
+                      <p className="text-sm text-muted-foreground leading-relaxed italic relative z-10 pl-4">
+                        "{item.testimonial}"
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-              
-              <div className="flex flex-col gap-4">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="fill-primary text-primary" />
-                  ))}
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-black text-foreground mb-1">
-                    {item.name}
-                  </h4>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-primary">
-                    {item.role}
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <Quote size={20} className="text-primary/20 absolute -top-2 -left-2" />
-                  <p className="text-sm text-muted-foreground leading-relaxed italic relative z-10 pl-4">
-                    "{item.testimonial}"
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </Slider>
         </div>
 
         {/* Depoimento Selecionado (Destaque) */}
