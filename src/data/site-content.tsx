@@ -241,41 +241,47 @@ export const testimonials = [
     role: 'CEO, TechSolutions',
     content: 'Em 30 dias triplicamos nosso faturamento. A IA no WhatsApp responde melhor que qualquer vendedor que já contratei.',
     rating: 5,
-    result: '+300% vendas'
+    result: '+300% vendas',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop'
   },
   {
     name: 'Ana Paula Silva',
     role: 'Fundadora, Bella Estética',
     content: 'Passei de 20 agendamentos/mês para 180. A landing page + automação mudaram completamente meu negócio.',
     rating: 5,
-    result: '+800% agendamentos'
+    result: '+800% agendamentos',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop'
   },
   {
     name: 'Roberto Alves',
     role: 'Diretor, Imóveis Premium',
     content: 'O Google Meu Negócio otimizado trouxe 40% mais visitas presenciais. ROI absurdo em 2 meses.',
     rating: 5,
-    result: '+40% visitas'
+    result: '+40% visitas',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop'
   },
   {
     name: 'Mariana Costa',
     role: 'Proprietária, Clínica Vida',
     content: 'A IA qualifica os pacientes antes de chegarem. Economizamos 3h por dia e dobramos o faturamento.',
     rating: 5,
-    result: '+100% faturamento'
+    result: '+100% faturamento',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop'
   },
   {
     name: 'Fernando Lima',
     role: 'Dono, Auto Center Plus',
     content: 'Antes perdia 70% dos orçamentos por demora. Agora a IA responde em segundos e fechamos muito mais.',
     rating: 5,
-    result: '+250% conversão'
+    result: '+250% conversão',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop'
   },
   {
     name: 'Juliana Santos',
     role: 'Gerente, Academia FitMax',
     content: 'O quiz interativo triplicou nossas matrículas. Os leads já chegam qualificados e prontos para fechar.',
     rating: 5,
-    result: '+200% matrículas'
+    result: '+200% matrículas',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop'
   }
 ];
