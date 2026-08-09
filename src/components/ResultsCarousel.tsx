@@ -117,10 +117,12 @@ const ResultsCarousel = () => {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .results-slider .slick-dots li button:before {
-          color: var(--primary);
+          color: white !important;
+          opacity: 0.5;
         }
         .results-slider .slick-dots li.slick-active button:before {
-          color: var(--primary);
+          color: #3b82f6 !important;
+          opacity: 1;
         }
         .results-slider .slick-list {
           padding: 20px 0;
