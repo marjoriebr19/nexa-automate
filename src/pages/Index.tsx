@@ -1,53 +1,70 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import PainPoints from '@/components/PainPoints';
-import Benefits from '@/components/Benefits';
-import Services from '@/components/Services';
-import Authority from '@/components/Authority';
-import HowItWorks from '@/components/HowItWorks';
-import SocialProof from '@/components/SocialProof';
-import CaseStudy from '@/components/CaseStudy';
-import TrustBadges from '@/components/TrustBadges';
-import FAQ from '@/components/FAQ';
-import ContactCTA from '@/components/ContactCTA';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import FloatingElements from '@/components/FloatingElements';
-import ExitIntentPopup from '@/components/ExitIntentPopup';
-import ROICalculator from '@/components/ROICalculator';
-import InteractiveQuiz from '@/components/InteractiveQuiz';
-import ActivityFeed from '@/components/ActivityFeed';
-import ClientLogos from '@/components/ClientLogos';
-import Portfolio from '@/components/Portfolio';
-import StaticImageDisplay from '@/components/StaticImageDisplay';
+import ErrorBoundary from '@/components/ErrorBoundary';
+
+// Acima da dobra: carregamento imediato (LCP).
+// Abaixo da dobra: code splitting por componente para reduzir o bundle inicial e o TBT.
+const PainPoints = lazy(() => import('@/components/PainPoints'));
+const Benefits = lazy(() => import('@/components/Benefits'));
+const Services = lazy(() => import('@/components/Services'));
+const ROICalculator = lazy(() => import('@/components/ROICalculator'));
+const Authority = lazy(() => import('@/components/Authority'));
+const HowItWorks = lazy(() => import('@/components/HowItWorks'));
+const InteractiveQuiz = lazy(() => import('@/components/InteractiveQuiz'));
+const SocialProof = lazy(() => import('@/components/SocialProof'));
+const CaseStudy = lazy(() => import('@/components/CaseStudy'));
+const TrustBadges = lazy(() => import('@/components/TrustBadges'));
+const FAQ = lazy(() => import('@/components/FAQ'));
+const ContactCTA = lazy(() => import('@/components/ContactCTA'));
+const Footer = lazy(() => import('@/components/Footer'));
+const WhatsAppButton = lazy(() => import('@/components/WhatsAppButton'));
+const FloatingElements = lazy(() => import('@/components/FloatingElements'));
+const ExitIntentPopup = lazy(() => import('@/components/ExitIntentPopup'));
+const ActivityFeed = lazy(() => import('@/components/ActivityFeed'));
+
+/** Placeholder com altura reservada para evitar CLS durante o lazy-load. */
+const SectionFallback = () => <div className="min-h-[40vh]" aria-hidden="true" />;
+
+const Deferred = ({ children }: { children: React.ReactNode }) => (
+  <ErrorBoundary>
+    <Suspense fallback={<SectionFallback />}>{children}</Suspense>
+  </ErrorBoundary>
+);
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <FloatingElements />
+      <Suspense fallback={null}>
+        <FloatingElements />
+      </Suspense>
       <Navigation />
       <main>
         <Hero />
-        
-        <PainPoints />
-        <Benefits />
-        <Services />
-        <ROICalculator />
-        <Authority />
-        <HowItWorks />
-        <InteractiveQuiz />
-        <SocialProof />
-        <CaseStudy />
-        
-        <TrustBadges />
-        <FAQ />
-        <ContactCTA />
+
+        <Deferred>
+          <PainPoints />
+          <Benefits />
+          <Services />
+          <ROICalculator />
+          <Authority />
+          <HowItWorks />
+          <InteractiveQuiz />
+          <SocialProof />
+          <CaseStudy />
+          <TrustBadges />
+          <FAQ />
+          <ContactCTA />
+        </Deferred>
       </main>
-      <Footer />
-      <WhatsAppButton />
-      <ActivityFeed />
-      <ExitIntentPopup />
+      <Deferred>
+        <Footer />
+      </Deferred>
+      <Suspense fallback={null}>
+        <WhatsAppButton />
+        <ActivityFeed />
+        <ExitIntentPopup />
+      </Suspense>
     </div>
   );
 };
