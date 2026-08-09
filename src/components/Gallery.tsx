@@ -3,6 +3,11 @@ import { Upload, X, Maximize2, Send } from 'lucide-react';
 import SectionHeader from './ui/SectionHeader';
 import { toast } from 'sonner';
 
+import chatRafael from '@/assets/chat-rafael.png.asset.json';
+import chatLucas from '@/assets/chat-lucas.png.asset.json';
+import chatIronFit from '@/assets/chat-ironfit.png.asset.json';
+import chatDomusPet from '@/assets/chat-domuspet.png.asset.json';
+
 interface GalleryImage {
   url: string;
   uploadDate: string;
@@ -10,9 +15,10 @@ interface GalleryImage {
 
 const Gallery = () => {
   const [images, setImages] = useState<GalleryImage[]>([
-    { url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop', uploadDate: new Date().toISOString() },
-    { url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop', uploadDate: new Date().toISOString() },
-    { url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop', uploadDate: new Date().toISOString() },
+    { url: chatRafael.url, uploadDate: new Date().toISOString() },
+    { url: chatLucas.url, uploadDate: new Date().toISOString() },
+    { url: chatIronFit.url, uploadDate: new Date().toISOString() },
+    { url: chatDomusPet.url, uploadDate: new Date().toISOString() },
   ]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
