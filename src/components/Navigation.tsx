@@ -15,7 +15,7 @@ const Navigation = () => {
 
   const navLinks = [
     { name: 'Serviços', href: '#services' },
-    { name: 'Resultados', href: '#results' },
+    { name: 'Resultados', href: '#carrossel-resultados' },
     { name: 'Portfólio', href: '#portfolio' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contato', href: '#contact' },
