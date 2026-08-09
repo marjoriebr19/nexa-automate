@@ -9,7 +9,10 @@ import result2 from '@/assets/result-2.png.asset.json';
 import result3 from '@/assets/result-3.png.asset.json';
 import chat1 from '@/assets/chat-1.png.asset.json';
 import chat2 from '@/assets/chat-2.png.asset.json';
-import chat3 from '@/assets/chat-3.png.asset.json';
+import chatRafael from '@/assets/chat-rafael.png.asset.json';
+import chatLucas from '@/assets/chat-lucas.png.asset.json';
+import chatIronFit from '@/assets/chat-ironfit.png.asset.json';
+import chatDomusPet from '@/assets/chat-domuspet.png.asset.json';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -20,6 +23,10 @@ const resultsImages = [
   result3.url,
   chat1.url,
   chat2.url,
+  chatRafael.url,
+  chatLucas.url,
+  chatIronFit.url,
+  chatDomusPet.url,
 ];
 
 const NextArrow = (props: any) => {
