@@ -20,7 +20,6 @@ const resultsImages = [
   result3.url,
   chat1.url,
   chat2.url,
-  chat3.url,
 ];
 
 const NextArrow = (props: any) => {
@@ -98,8 +97,7 @@ const ResultsCarousel = () => {
             {resultsImages.map((img, index) => (
               <div key={index} className="px-2">
                 <div 
-                  className="glass rounded-2xl overflow-hidden border border-white/10 flex items-center justify-center bg-black/40 group"
-                  style={{ width: '250px', height: '150px', margin: '0 auto' }}
+                  className="glass rounded-2xl overflow-hidden border border-white/10 flex items-center justify-center bg-black/40 group relative aspect-[250/150]"
                 >
                   <img 
                     src={img} 
