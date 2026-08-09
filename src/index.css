@@ -146,3 +146,7 @@
     animation: pulse-opacity 3s ease-in-out infinite;
   }
 }
+
+#lovable-badge {
+  display: none !important;
+}
