@@ -51,7 +51,6 @@ const Index = () => {
           <Authority />
           <HowItWorks />
           <InteractiveQuiz />
-          <ResultsCarousel />
           <Gallery />
           <CaseStudy />
           <TrustBadges />
