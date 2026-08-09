@@ -71,7 +71,7 @@ const Gallery = () => {
           description="Gerencie as fotos do seu projeto com facilidade. Selecione arquivos para substituir as imagens existentes."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {images.map((image, index) => (
             <div key={index} className="group relative glass rounded-2xl overflow-hidden border border-white/10 aspect-video">
               <img 
