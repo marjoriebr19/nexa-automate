@@ -58,7 +58,7 @@ const Gallery = () => {
         uploadDate: new Date().toISOString(),
       };
       
-      setImages(prev => [newImage, ...prev]);
+      setImages(prev => [...prev, newImage]);
       toast.success("Imagem adicionada com sucesso!");
     };
     reader.readAsDataURL(file);
@@ -80,6 +80,7 @@ const Gallery = () => {
   return (
     <section id="galeria-resultados" className="section-padding bg-white relative">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+        {/* Lista Vertical de Resultados */}
         <div className="flex flex-col gap-[10px] items-center">
           {images.map((image, index) => (
             <div 
@@ -87,6 +88,7 @@ const Gallery = () => {
               className="w-[300px] flex flex-col bg-white rounded-[5px] shadow-sm border border-gray-100 overflow-hidden"
               style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}
             >
+              {/* Imagem com Altura Automática */}
               <div className="relative group w-full cursor-pointer" onClick={() => setSelectedImage(image.url)}>
                 <img 
                   src={image.url} 
@@ -98,6 +100,7 @@ const Gallery = () => {
                 </div>
               </div>
               
+              {/* Informações do Cliente abaixo da imagem */}
               <div className="p-4 bg-white text-left">
                 <h4 className="font-['Open_Sans'] text-[14px] font-bold text-[#333333] mb-1">
                   {image.name}
@@ -131,6 +134,7 @@ const Gallery = () => {
         </div>
       </div>
 
+      {/* Lightbox Simples */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md"
