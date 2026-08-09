@@ -145,6 +145,14 @@
   .animate-pulse-opacity {
     animation: pulse-opacity 3s ease-in-out infinite;
   }
+
+  .gallery-carousel-wrapper .slick-track {
+    display: flex !important;
+  }
+
+  .gallery-carousel-wrapper .slick-slide {
+    height: inherit !important;
+  }
 }
 
 #lovable-badge {
