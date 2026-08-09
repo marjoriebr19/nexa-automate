@@ -53,6 +53,36 @@ const Gallery = () => {
   return (
     <section id="galeria-resultados" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
+        {/* Título de Apresentação da Seção */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full text-primary text-[10px] font-black uppercase tracking-[0.2em] mb-6"
+          >
+            Nossos Resultados
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight"
+          >
+            Depoimentos de <span className="text-gradient">Quem Confia</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-slate-600 text-lg max-w-2xl mx-auto font-medium"
+          >
+            Veja como ajudamos empresas reais a alcançarem resultados extraordinários com nossa tecnologia e estratégia.
+          </motion.p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((item) => (
             <motion.div 
@@ -61,7 +91,7 @@ const Gallery = () => {
               onClick={() => setSelectedId(item.id)}
               className={`
                 cursor-pointer bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all
-                ${selectedId === item.id ? 'ring-2 ring-primary ring-offset-2' : 'hover:shadow-md'}
+                ${selectedId === item.id ? 'ring-2 ring-primary ring-offset-2' : 'hover:shadow-md hover:-translate-y-1'}
               `}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +108,7 @@ const Gallery = () => {
                     e.stopPropagation();
                     setSelectedImage(item.url);
                   }}
-                  className="absolute top-2 right-2 p-2 bg-white/80 backdrop-blur-sm rounded-full text-slate-600 hover:text-primary transition-colors"
+                  className="absolute top-2 right-2 p-2 bg-white/80 backdrop-blur-sm rounded-full text-slate-600 hover:text-primary transition-colors z-10"
                 >
                   <Maximize2 size={16} />
                 </button>
@@ -107,12 +137,16 @@ const Gallery = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="mt-12 p-8 bg-primary/5 rounded-2xl border border-primary/10 text-center"
+              className="mt-12 p-8 bg-white rounded-2xl border border-slate-200 shadow-xl text-center relative overflow-hidden"
             >
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
+              <h3 className="text-xl font-black text-slate-900 mb-2">
                 {testimonials.find(t => t.id === selectedId)?.name}
               </h3>
-              <p className="text-slate-600 max-w-2xl mx-auto italic">
+              <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">
+                {testimonials.find(t => t.id === selectedId)?.role}
+              </p>
+              <p className="text-slate-700 text-lg max-w-2xl mx-auto italic leading-relaxed">
                 "{testimonials.find(t => t.id === selectedId)?.testimonial}"
               </p>
             </motion.div>
