@@ -1,140 +1,126 @@
 import React, { useState } from 'react';
-import { Upload, X, Maximize2, Send } from 'lucide-react';
-import { toast } from 'sonner';
+import { X, Maximize2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import chatRafael from '@/assets/chat-rafael.png.asset.json';
 import chatLucas from '@/assets/chat-lucas.png.asset.json';
 import chatIronFit from '@/assets/chat-ironfit.png.asset.json';
 import chatDomusPet from '@/assets/chat-domuspet.png.asset.json';
 
-interface GalleryImage {
+interface Testimonial {
+  id: number;
   url: string;
   name: string;
+  role: string;
   testimonial: string;
-  uploadDate: string;
 }
 
 const Gallery = () => {
-  const [images, setImages] = useState<GalleryImage[]>([
+  const [testimonials] = useState<Testimonial[]>([
     { 
+      id: 1,
       url: chatRafael.url, 
-      name: "Rafael - Império Climatização",
+      name: "Rafael",
+      role: "Império Climatização",
       testimonial: "Aparecemos no Google e isso fez toda a diferença!",
-      uploadDate: new Date().toISOString() 
     },
     { 
+      id: 2,
       url: chatLucas.url, 
-      name: "Lucas (Cliente)",
+      name: "Lucas",
+      role: "Empreendedor",
       testimonial: "Mais credibilidade, mais contatos e mais clientes!",
-      uploadDate: new Date().toISOString() 
     },
     { 
+      id: 3,
       url: chatIronFit.url, 
       name: "Iron Fit Academia",
+      role: "Gerente",
       testimonial: "As matrículas pelo site aumentaram muito!",
-      uploadDate: new Date().toISOString() 
     },
     { 
+      id: 4,
       url: chatDomusPet.url, 
       name: "Domus Pet",
+      role: "Proprietário",
       testimonial: "Vendas aumentaram bastante desde que o site entrou no ar!",
-      uploadDate: new Date().toISOString() 
     },
   ]);
+  
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
-
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const newImageUrl = e.target?.result as string;
-      const newImage: GalleryImage = {
-        url: newImageUrl,
-        name: "Novo Cliente",
-        testimonial: "Excelente trabalho da Nex Automa!",
-        uploadDate: new Date().toISOString(),
-      };
-      
-      setImages(prev => [...prev, newImage]);
-      toast.success("Imagem adicionada com sucesso!");
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleSendToServer = async () => {
-    setIsUploading(true);
-    try {
-      console.log("Enviando fotos para o servidor:", JSON.stringify(images));
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success("Galeria sincronizada!");
-    } catch (error) {
-      toast.error("Erro ao enviar.");
-    } finally {
-      setIsUploading(false);
-    }
-  };
+  const [selectedId, setSelectedId] = useState<number | null>(null);
 
   return (
-    <section id="galeria-resultados" className="section-padding bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
-        {/* Lista Vertical de Resultados */}
-        <div className="flex flex-col gap-[10px] items-center">
-          {images.map((image, index) => (
-            <div 
-              key={index} 
-              className="w-[300px] flex flex-col bg-white rounded-[5px] shadow-sm border border-gray-100 overflow-hidden"
-              style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}
+    <section id="galeria-resultados" className="section-padding bg-slate-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((item) => (
+            <motion.div 
+              key={item.id}
+              layoutId={`card-${item.id}`}
+              onClick={() => setSelectedId(item.id)}
+              className={`
+                cursor-pointer bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all
+                ${selectedId === item.id ? 'ring-2 ring-primary ring-offset-2' : 'hover:shadow-md'}
+              `}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              {/* Imagem com Altura Automática */}
-              <div className="relative group w-full cursor-pointer" onClick={() => setSelectedImage(image.url)}>
+              <div className="relative aspect-square overflow-hidden bg-slate-100">
                 <img 
-                  src={image.url} 
-                  alt={image.name}
-                  className="w-full h-auto block"
+                  src={item.url} 
+                  alt={item.name}
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <Maximize2 size={24} className="text-white" />
-                </div>
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage(item.url);
+                  }}
+                  className="absolute top-2 right-2 p-2 bg-white/80 backdrop-blur-sm rounded-full text-slate-600 hover:text-primary transition-colors"
+                >
+                  <Maximize2 size={16} />
+                </button>
               </div>
               
-              {/* Informações do Cliente abaixo da imagem */}
-              <div className="p-4 bg-white text-left">
-                <h4 className="font-['Open_Sans'] text-[14px] font-bold text-[#333333] mb-1">
-                  {image.name}
-                </h4>
-                <p className="font-['Open_Sans'] text-[14px] text-[#333333] leading-relaxed">
-                  "{image.testimonial}"
+              <div className="p-5">
+                <div className="mb-3">
+                  <h4 className="font-['Open_Sans'] text-[14px] font-bold text-[#333333]">
+                    {item.name}
+                  </h4>
+                  <p className="font-['Open_Sans'] text-[12px] text-slate-500">
+                    {item.role}
+                  </p>
+                </div>
+                <p className="font-['Open_Sans'] text-[14px] text-[#333333] leading-relaxed italic">
+                  "{item.testimonial}"
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-12 flex gap-4">
-          <label className="flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-bold hover:bg-gray-200 transition-all cursor-pointer">
-            <Upload size={20} />
-            Adicionar Foto
-            <input type="file" className="hidden" onChange={handleFileUpload} accept="image/*" />
-          </label>
-          <button 
-            onClick={handleSendToServer}
-            disabled={isUploading}
-            className="flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
-          >
-            {isUploading ? "Sincronizando..." : (
-              <>
-                <Send size={20} />
-                Sincronizar
-              </>
-            )}
-          </button>
-        </div>
+        <AnimatePresence>
+          {selectedId && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-12 p-8 bg-primary/5 rounded-2xl border border-primary/10 text-center"
+            >
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
+                {testimonials.find(t => t.id === selectedId)?.name}
+              </h3>
+              <p className="text-slate-600 max-w-2xl mx-auto italic">
+                "{testimonials.find(t => t.id === selectedId)?.testimonial}"
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Lightbox Simples */}
+      {/* Lightbox */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md"
