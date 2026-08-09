@@ -40,7 +40,7 @@ const Index = () => {
         <SocialProof />
         <CaseStudy />
         <Portfolio />
-        <StaticImageDisplay />
+        
         <TrustBadges />
         <FAQ />
         <ContactCTA />
