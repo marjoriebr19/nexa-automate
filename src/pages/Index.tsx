@@ -39,7 +39,6 @@ const Index = () => {
         <InteractiveQuiz />
         <SocialProof />
         <CaseStudy />
-        <Portfolio />
         
         <TrustBadges />
         <FAQ />
