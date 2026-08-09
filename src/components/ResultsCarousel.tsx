@@ -20,7 +20,6 @@ const resultsImages = [
   result3.url,
   chat1.url,
   chat2.url,
-  chat3.url,
 ];
 
 const NextArrow = (props: any) => {
