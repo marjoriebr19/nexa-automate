@@ -14,6 +14,7 @@ const HowItWorks = lazy(() => import('@/components/HowItWorks'));
 const InteractiveQuiz = lazy(() => import('@/components/InteractiveQuiz'));
 const ResultsCarousel = lazy(() => import('@/components/ResultsCarousel'));
 const CaseStudy = lazy(() => import('@/components/CaseStudy'));
+const Gallery = lazy(() => import('@/components/Gallery'));
 const TrustBadges = lazy(() => import('@/components/TrustBadges'));
 const FAQ = lazy(() => import('@/components/FAQ'));
 const ContactCTA = lazy(() => import('@/components/ContactCTA'));
@@ -51,6 +52,7 @@ const Index = () => {
           <HowItWorks />
           <InteractiveQuiz />
           <ResultsCarousel />
+          <Gallery />
           <CaseStudy />
           <TrustBadges />
           <FAQ />
