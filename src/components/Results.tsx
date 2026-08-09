@@ -63,7 +63,7 @@ const Results = () => {
               </p>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border border-primary/20 bg-primary/20">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30 bg-primary/10 shadow-lg">
                   {testimonial.image ? (
                     <img 
                       src={testimonial.image} 
@@ -72,7 +72,7 @@ const Results = () => {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-primary font-bold text-sm">
+                      <span className="text-primary font-bold text-lg">
                         {testimonial.name.charAt(0)}
                       </span>
                     </div>
